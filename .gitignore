@@ -1,6 +1,6 @@
-.xlsx
 .git
 .venv
 .vscode
 __pycache__
 /data
+*.xlsx
