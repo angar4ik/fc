@@ -1,4 +1,4 @@
-# scan all json files in fc directory and subdirectories
+# scan all json files in data directory and subdirectories
 # filter items by given parameters (e.g. assessed value > judgment value, assessed value in bewtwwen 80k and 120k)
 # create a new json file with filtered items
 import os
@@ -6,7 +6,7 @@ import json
 from lib.filter_data import FilterData
 
 # path to directory with json files
-path = "./fc"
+path = "./data"
 # list of filtered items
 filtered_items = []
 

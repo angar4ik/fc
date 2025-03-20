@@ -95,11 +95,11 @@ def get_date_specific_url(date):
     return f"{BASE_URL}/index.cfm?zaction=AUCTION&Zmethod=PREVIEW&AUCTIONDATE={date}"
 
 def save_data_to_file(date, auction_items, url):
-    # Create fc directory if it doesn't exist
-    os.makedirs(f'fc/{CURRENT_COUNTY}', exist_ok=True)
+    # Create data directory if it doesn't exist
+    os.makedirs(f'data/{CURRENT_COUNTY}', exist_ok=True)
     safe_date = date.replace('/', '_')
     # Format date for filename
-    filename = f"fc/{CURRENT_COUNTY}/{safe_date}.json"
+    filename = f"data/{CURRENT_COUNTY}/{safe_date}.json"
 
     # Create a dictionary with metadata and auction items
     data_to_save = {
@@ -148,7 +148,7 @@ def process_county(county=None):
     if dates:
         for date in dates:
             # Check if file already exists for this date
-            filename = f"fc/{CURRENT_COUNTY}/{date.replace('/', '_')}.json"
+            filename = f"data/{CURRENT_COUNTY}/{date.replace('/', '_')}.json"
             if os.path.exists(filename) and not FORCE:
                 print(f"Skipping date {date} - data already exists")
                 continue
