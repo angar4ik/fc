@@ -33,6 +33,6 @@ for root, dirs, files in os.walk(path):
             except Exception as e:
                 print(f"Error processing {file_path}: {str(e)}")
 
-print(len(filtered_items))
+#print(len(filtered_items))
 
 FilterData().save_to_excel(filtered_items)
