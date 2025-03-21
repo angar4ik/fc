@@ -127,7 +127,6 @@ class ParseData:
         return address1
     
     def display_auction_items(self, auction_items: List[Dict[str, Any]]) -> None:
-        realtor_data = RealtorData()
         """Print auction items in a readable format"""
         for i, item in enumerate(auction_items, 1):
             # print(f"\nProperty {i} (ID: {item['auction_id']})")
@@ -138,17 +137,17 @@ class ParseData:
             print(f"Assessed Value: {item['assessed_value']}")
             print(f"Property Address: {item['property_address']}")
 
-    def parse_and_display_auction_data(self, raw_data):
-        # Example usage
-        auction_items = self.parse_auction_data(raw_data)
-        # Display count before filtering
-        print(f"Auction items: {len(auction_items)}")
-        # Filter items based on assessed value
-        auction_items = self.filter_items_by_assessed_value_min_max(auction_items, 100000, 150000)
-        auction_items = self.filter_items_by_assessed_value(auction_items)
+    # def parse_and_display_auction_data(self, raw_data):
+    #     # Example usage
+    #     auction_items = self.parse_auction_data(raw_data)
+    #     # Display count before filtering
+    #     print(f"Auction items: {len(auction_items)}")
+    #     # Filter items based on assessed value
+    #     auction_items = self.filter_items_by_assessed_value_min_max(auction_items, 100000, 150000)
+    #     auction_items = self.filter_items_by_assessed_value(auction_items)
 
-        if auction_items:
-            self.display_auction_items(auction_items)
+    #     if auction_items:
+    #         self.display_auction_items(auction_items)
 
     def enrich_auction_items(self, auction_items):
         realtor_data = RealtorData()

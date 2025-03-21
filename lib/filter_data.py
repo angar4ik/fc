@@ -21,7 +21,7 @@ class FilterData:
                 condition2 = (assessed_value > min) and (assessed_value < max)
                 
                 if condition1 and condition2:
-                    item['url'] = data['url']
+                    item['auction_date'] = data['auction_date']
                     #print(item)
                     filtered_items.append(item)
             except (ValueError, KeyError) as e:
@@ -51,7 +51,7 @@ class FilterData:
                 df['assessed_value'] = df['assessed_value'].str.replace('$', '').str.replace(',', '').astype(float)
             
             # rearrange columns so 'property_address' is first, 'assessed_value' is second and 'final_judgment_amount' is third
-            df = df[['property_address', 'assessed_value', 'final_judgment_amount', 'url', 'realtor_link']]
+            df = df[['property_address', 'assessed_value', 'final_judgment_amount', 'auction_date', 'realtor_link']]
             
             # Generate timestamp for filename
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")

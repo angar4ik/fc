@@ -104,6 +104,7 @@ def save_data_to_file(date, auction_items, url):
     # Create a dictionary with metadata and auction items
     data_to_save = {
         "url": url,
+        "auction_date": date,
         "scrape_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "auction_items": auction_items
     }
